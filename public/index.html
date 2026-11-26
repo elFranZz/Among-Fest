@@ -61,7 +61,7 @@ function taskMarkup(t,meeting){
  if(t.photoProof)extra+=`<div><b class="good">Foto de prueba subida</b><img class="photo-preview" src="${t.photoProof}" alt="Foto de prueba de la misión"></div>`;
  let actions='';
  if(!t.completed&&!meeting){
-   if(t.photoRequired)actions=`<label for="photo-${t.id}">Foto como prueba</label><input class="upload-input" id="photo-${t.id}" type="file" accept="image/*" capture="environment" onchange="uploadProof('${t.id}',this.files&&this.files[0])"><button class="blue" onclick="document.getElementById('photo-${t.id}').click()">SUBIR FOTO DE PRUEBA</button>`;
+   if(t.photoRequired || Number(t.missionId) === 19)actions=`<label for="photo-${t.id}">Foto como prueba</label><input class="upload-input" id="photo-${t.id}" type="file" accept="image/*" capture="environment" onchange="uploadProof('${t.id}',this.files&&this.files[0])"><button class="blue" onclick="document.getElementById('photo-${t.id}').click()">SUBIR FOTO DE PRUEBA</button>`;
    else actions=`<button ${t.waitingPartner?'disabled':''} class="green" onclick="completeMission('${t.id}')">${t.waitingPartner?'ESPERANDO A TU PAREJA':'MARCAR COMO REALIZADA'}</button>`;
    if(t.type==='pair')actions+=`<button class="alt" onclick="alertPartner('${t.id}')">AVISAR A MI COMPAÑERO</button>`;
  }
