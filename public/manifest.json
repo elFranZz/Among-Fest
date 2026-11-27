@@ -1,0 +1,11 @@
+{
+  "name": "Among Fest",
+  "short_name": "Among Fest",
+  "description": "Juego multijugador de misiones, impostores y reuniones.",
+  "lang": "es-ES",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090713",
+  "theme_color": "#17072d"
+}
