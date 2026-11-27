@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17072d"><link rel="manifest" href="/manifest.json"><title>Among Fest</title>
+<style>
+:root{--bg:#100921;--panel:#20133c;--panel2:#2b1b4c;--line:#7545ad;--purple:#9b5de5;--pink:#ff4d83;--yellow:#ffd83d;--blue:#2778e8;--red:#e94155;--white:#fffaff;--muted:#c8b9df;--green:#72e5a2}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#46206e 0,#1a0d31 42%,#0d071b 100%);color:var(--white);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}main{max-width:980px;margin:auto;padding:18px 14px 42px}.top{display:flex;align-items:center;gap:12px;margin:5px 0 18px}.brand{font-size:34px;font-weight:1000;line-height:1;letter-spacing:-1px;text-shadow:0 3px 0 #080512}.brand span{color:var(--red)}.brand-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ff4e63,#9917a9);font-size:25px;border:2px solid white;box-shadow:0 0 20px #ad50ed}.tagline{color:var(--muted);font-size:13px;margin:4px 0 0}.panel{background:linear-gradient(145deg,rgba(43,27,76,.97),rgba(24,15,47,.97));border:1px solid #7043a3;border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 12px 30px #07031180}.hidden{display:none!important}h1,h2,h3,p{margin-top:0}h2{font-size:21px;margin-bottom:12px}h3{font-size:18px;margin:6px 0;color:var(--yellow)}label{display:block;color:var(--muted);font-size:13px;margin:10px 0 5px}input,select{width:100%;border:1px solid #8253b6;background:#130c27;color:white;border-radius:11px;padding:13px;min-height:46px}button{border:0;border-radius:12px;padding:13px 16px;font-weight:850;background:var(--yellow);color:#1b1028;cursor:pointer;margin:5px 5px 5px 0;box-shadow:0 3px 0 #986a11}button.alt{background:#55317b;color:white;box-shadow:0 3px 0 #29143e}button.blue{background:var(--blue);color:white;box-shadow:0 3px 0 #174d9b}button.red{background:var(--red);color:white;box-shadow:0 3px 0 #8d1e35}button.green{background:var(--green);color:#102b1c;box-shadow:0 3px 0 #28794a}button:disabled{opacity:.46;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.small,.muted{color:var(--muted);font-size:13px}.code{font-size:34px;letter-spacing:7px;color:var(--yellow);font-weight:1000}.stat{background:#180e2b;border:1px solid #54317a;border-radius:14px;padding:13px}.stat b{display:block;color:var(--yellow);font-size:23px}.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin:12px 0}.player{background:#2c1c4b;border:1px solid #593881;border-radius:12px;padding:10px}.good{color:var(--green)}.wait{color:var(--yellow)}.notice{background:#2c1b4b;border-left:4px solid var(--yellow);border-radius:10px;padding:12px;margin:10px 0}.role{font-size:24px;font-weight:1000;color:var(--yellow)}.progress-wrap{height:13px;background:#10091e;border:1px solid #593881;border-radius:99px;overflow:hidden;margin:8px 0 14px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#9b5de5,#ffd83d);transition:width .2s}.task-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.mission-card{position:relative;background:linear-gradient(145deg,#291846,#1b1230);border:1px solid #7947af;border-radius:16px;padding:15px;overflow:hidden}.mission-card.done{border-color:#55c983;opacity:.83}.mission-card h3{font-size:19px}.mission-top{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:7px}.pill{display:inline-block;border-radius:99px;padding:4px 9px;font-size:10px;font-weight:900;letter-spacing:.4px;background:#6d3fa1;color:white}.pill.pair{background:#7c45be}.pill.individual{background:#2468bf}.pill.special{background:#bf3451}.meeting-clock{font-size:clamp(38px,8vw,62px);font-weight:1000;line-height:1.05;text-align:center;letter-spacing:2px;color:var(--yellow);text-shadow:0 3px 0 #090313;margin:12px 0}.meeting-clock.voting{font-size:24px;letter-spacing:1px;color:var(--green)}.meeting-rosters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.roster-panel{background:#180e2b;border:1px solid #54317a;border-radius:14px;padding:12px}.roster-panel h3{font-size:14px;margin:0 0 9px}.roster-list{display:grid;gap:7px}.roster-player{display:flex;align-items:center;gap:9px;background:#2c1c4b;border:1px solid #593881;border-radius:11px;padding:8px}.roster-player.dead{opacity:.6;filter:saturate(.5)}.roster-avatar{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#9b5de5,#57318c);font-weight:950;color:#fff}.roster-player.dead .roster-avatar{background:#563746}.roster-name{font-weight:800;min-width:0;overflow-wrap:anywhere}.roster-status{font-size:11px;color:var(--muted)}.roster-empty{font-size:12px;color:var(--muted);padding:8px 2px}@media(max-width:560px){.meeting-rosters{grid-template-columns:1fr}}.pill.survival{background:#287d8e}.mission-desc{color:#f2eafb;margin:8px 0}.materials{background:#140d25;border-radius:10px;padding:9px 11px;margin:9px 0;color:#fff}.materials b{color:#70aaff;font-size:11px;display:block;margin-bottom:2px}.mission-extra{color:#ffe6a5;font-size:12px;margin:7px 0}.combo{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.playing-card{background:#fff;color:#15101d;border:2px solid #111;border-radius:8px;min-width:39px;padding:6px 8px;text-align:center;font-size:17px;font-weight:1000;box-shadow:0 2px 0 #090313}.playing-card.red{color:#db2440}.reference-image{background:#fff;color:#161020;border-radius:12px;padding:12px;text-align:center;margin:10px 0}.reference-image .emoji{font-size:40px;display:block}.photo-preview{display:block;max-width:170px;max-height:140px;border:2px solid white;border-radius:10px;margin:8px 0}.upload-input{display:none}.section-title{display:flex;align-items:center;gap:8px;margin:20px 0 10px}.section-title:before{content:'';width:7px;height:22px;border-radius:5px;background:var(--yellow)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);max-width:calc(100% - 26px);width:460px;background:#fff;color:#21152f;padding:14px 16px;border:2px solid var(--purple);border-radius:14px;box-shadow:0 10px 35px #0009;z-index:30;font-weight:750}.modal-backdrop{position:fixed;inset:0;background:#05020bd9;z-index:40;display:grid;place-items:center;padding:18px}.modal{width:min(480px,100%);background:#24133e;border:2px solid var(--purple);border-radius:20px;padding:22px;box-shadow:0 15px 60px #0009}.modal h2{color:var(--yellow)}.danger-note{border-left:4px solid var(--pink);background:#401a37;padding:12px;border-radius:10px}.footer{text-align:center;color:#a998c0;font-size:12px;padding:22px 0}.rule{height:1px;background:#523276;margin:14px 0}
+@media(max-width:560px){main{padding:12px 10px 32px}.brand{font-size:29px}.panel{padding:14px;border-radius:16px}.two-col{grid-template-columns:1fr}.task-list{grid-template-columns:1fr}.code{font-size:29px}.mission-card{padding:13px}}
+</style>
+</head>
+<body><main>
+<header class="top"><div class="brand-icon">🚀</div><div><div class="brand">AMONG <span>FEST</span></div><p class="tagline">La partida empieza cuando todos estén preparados.</p></div></header>
+<section class="panel" id="entry">
+  <h2>Entrar o crear partida</h2>
+  <label for="name">Tu nombre</label><input id="name" maxlength="18" placeholder="Por ejemplo, Alex" autocomplete="nickname">
+  <div class="grid"><div><button id="create" style="width:100%">CREAR PARTIDA</button></div><div><label for="code">Código de partida</label><input id="code" maxlength="4" placeholder="ABCD" autocapitalize="characters"><button class="alt" id="join" style="width:100%">ENTRAR CON CÓDIGO</button></div></div>
+  <p class="small" id="entryError" aria-live="polite"></p>
+</section>
+<section class="panel hidden" id="lobby">
+  <div class="grid"><div class="stat"><span class="small">CÓDIGO DE SALA</span><div class="code" id="roomCode">----</div><button class="alt" id="copyCode">COPIAR CÓDIGO</button></div><div class="stat"><span class="small">JUGADORES</span><b id="count">0 / 25</b><span class="small">Preparados: </span><b id="readyCount">0 / 0</b></div></div>
+  <h2>Sala de espera</h2><div id="players" class="players"></div><div id="lobbyMessage" class="notice">Cuando todos estéis listos, comenzará la cuenta atrás.</div>
+  <button class="green" id="ready">ESTOY LISTO</button><button class="alt" id="unready">TODAVÍA NO</button>
+</section>
+<section class="panel hidden" id="game">
+  <div class="grid"><div class="stat"><span class="small">TU ROL</span><div id="role" class="role">—</div></div><div class="stat"><span class="small">TIEMPO RESTANTE</span><b id="timer">60:00</b></div></div>
+  <p id="mission" class="notice"></p>
+  <div id="aliveBanner" class="notice hidden"></div>
+  <div id="deadBanner" class="danger-note hidden"><b>ESTÁS ELIMINADO</b><p class="small" style="margin:5px 0 0">Ya no puedes completar misiones ni participar en las votaciones.</p></div>
+  <div class="grid" id="progressStats"><div class="stat"><span class="small">TUS MISIONES</span><b id="personalProgress">0 / 0</b><div class="progress-wrap"><div id="personalBar" class="progress-fill"></div></div></div><div class="stat"><span class="small">PROGRESO GENERAL</span><b id="teamProgress">0 / 0</b><div class="progress-wrap"><div id="teamBar" class="progress-fill"></div></div></div></div>
+  <section id="impostorPanel" class="panel hidden"><h2>Acción secreta</h2><p class="small">Solicita una eliminación dentro del juego. La otra persona debe confirmar en su móvil tras oír la clave acordada.</p><label for="elimTarget">Jugador</label><select id="elimTarget"></select><button class="red" id="requestElimination">SOLICITAR ELIMINACIÓN SECRETA</button></section>
+  <section id="reportPanel" class="panel hidden"><h2>Reportar un hallazgo</h2><p class="small">Cuando encuentres a un jugador eliminado, selecciona su nombre e introduce la palabra de confirmación para convocar una reunión.</p><div class="two-col"><div><label for="foundPlayer">Jugador encontrado</label><select id="foundPlayer"></select></div><div><label for="reportWord">Palabra de confirmación</label><input id="reportWord" placeholder="PALABRA" autocapitalize="characters"></div></div><div class="notice">Clave de la partida: <b id="reportCode" style="color:var(--yellow);letter-spacing:2px"></b></div><button class="blue" id="reportButton">REPORTAR Y CONVOCAR REUNIÓN</button></section>
+  <section id="meetingPanel" class="panel hidden">
+    <h2>🚨 REUNIÓN DE EMERGENCIA</h2>
+    <div class="meeting-clock" id="meetingClock">03:00</div>
+    <div class="notice" id="meetingInfo">Se ha convocado una reunión.</div>
+    <p class="small" id="meetingPhaseText">Tenéis tres minutos para debatir quién puede ser el impostor.</p>
+    <div class="meeting-rosters">
+      <div class="roster-panel"><h3>🟢 JUGADORES VIVOS <span id="aliveCount"></span></h3><div class="roster-list" id="alivePlayers"></div></div>
+      <div class="roster-panel"><h3>☠️ JUGADORES ELIMINADOS <span id="deadCount"></span></h3><div class="roster-list" id="deadPlayers"></div></div>
+    </div>
+    <section id="votingControls" class="hidden"><h3>VOTACIÓN</h3><p class="small" id="voteProgress"></p><label for="voteTarget">¿A quién votas?</label><select id="voteTarget"></select><button class="red" id="castVote">EMITIR VOTO</button><p class="small" id="votedNotice"></p></section>
+  </section>
+  <h2 class="section-title">Tus misiones</h2><div id="missionList" class="task-list"></div>
+  <section id="survivalPanel" class="panel hidden"><h2>OBJETIVOS COMUNES DE SUPERVIVENCIA</h2><p class="small">Estas misiones pertenecían a jugadores eliminados. Cualquiera que siga vivo puede completarlas.</p><div id="survivalList" class="task-list"></div></section>
+  <div id="meetingResult" class="notice hidden"></div>
+</section>
+<footer class="footer">Among Fest · Juego multijugador · Cada jugador ve su rol y sus propias misiones</footer>
+</main>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<div id="elimModal" class="modal-backdrop hidden"><div class="modal"><h2>Solicitud de eliminación</h2><p>Alguien te ha enviado una solicitud dentro del juego.</p><p><b>¿Has escuchado la clave acordada y confirmas la eliminación?</b></p><p class="small">Confirma únicamente si has oído la clave del juego. No hay ninguna acción física.</p><button class="red" id="confirmElimination">CONFIRMAR</button><button class="alt" id="rejectElimination">NO CONFIRMO</button></div></div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket=io();let myState=null,timerLoop=null,meetingLoop=null,pendingEliminationId=null,toastTimer=null;
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function showScreen(id){['entry','lobby','game'].forEach(x=>$(x).classList.toggle('hidden',x!==id));}
+function toast(message){$('toast').textContent=message;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),4500);}
+function error(message){$('entryError').textContent=message||'';if(message)toast(message);}
+function handleState(s){myState=s;if(s?.game)rememberAssignedMissions(s);if(['playing','meeting','finished'].includes(s.room.status)){showScreen('game');renderGame();renderTimer(s.room.endsAt);}else{showScreen('lobby');renderRoom(s.room);}}
+function renderRoom(r){$('roomCode').textContent=r.code;$('count').textContent=r.players.length+' / '+r.maxPlayers;$('readyCount').textContent=r.players.filter(p=>p.ready).length+' / '+r.players.length;$('players').innerHTML=r.players.map(p=>`<div class="player"><b>${esc(p.name)}</b><div class="small ${p.ready?'good':'wait'}">${p.ready?'✓ LISTO':'ESPERANDO'}${p.isHost?' · ANFITRIÓN':''}${!p.connected?' · DESCONECTADO':''}</div></div>`).join('');$('lobbyMessage').textContent=r.status==='countdown'?'¡Todos listos! La partida comienza en breve.':'Se necesitan al menos '+r.minPlayers+' jugadores y que todos estén listos.';$('ready').textContent=myState?.me?.ready?'LISTO ✓':'ESTOY LISTO';}
+function optionsFor(select,items,placeholder){select.innerHTML='';if(placeholder){const o=document.createElement('option');o.value='';o.textContent=placeholder;select.appendChild(o);}items.forEach(x=>{const o=document.createElement('option');o.value=x.id;o.textContent=x.name;select.appendChild(o);});}
+function missionHistoryKey(name){return 'amongfest_mission_history_v1:'+String(name||$('name').value||'').trim().toLowerCase();}
+function readMissionHistory(name){try{return JSON.parse(localStorage.getItem(missionHistoryKey(name))||'[]').map(Number).filter(Number.isFinite).slice(0,60);}catch(e){return [];}}
+function rememberAssignedMissions(state){
+ try{
+  const name=state.me?.name||$('name').value,key=missionHistoryKey(name),seenKey=key+':seen-task-ids';
+  const history=readMissionHistory(name),seen=JSON.parse(localStorage.getItem(seenKey)||'[]'),seenSet=new Set(seen);
+  let changed=false;
+  for(const t of (state.game.tasks||[]))if(t.id&&!seenSet.has(t.id)){history.unshift(Number(t.missionId));seenSet.add(t.id);changed=true;}
+  if(changed){localStorage.setItem(key,JSON.stringify(history.slice(0,60)));localStorage.setItem(seenKey,JSON.stringify([...seenSet].slice(-160)));}
+ }catch(e){}
+}
+function taskMarkup(t,meeting){
+ const cls=t.type==='pair'?'pair':t.type==='special'?'special':t.type==='survival'?'survival':'individual';
+ let extra='';
+ if(t.assignment)extra+=`<div class="mission-extra"><b>Asignación:</b> ${esc(t.assignment)}</div>`;
+ if(t.preparation)extra+=`<div class="mission-extra"><b>Preparación:</b> ${esc(t.preparation)}</div>`;
+ if(t.shared)extra+=`<div class="mission-extra">🌟 Objetivo común procedente de ${esc(t.sourcePlayerName||'un jugador eliminado')}</div>`;
+ if(t.type==='pair'&&!t.partnerEliminated)extra+=`<div class="mission-extra">🤝 <b>Pareja:</b> ${esc(t.partnerName||'Compañero')}</div>`;
+ if(t.combo)extra+=`<div class="combo" aria-label="Combinación de cartas">${t.combo.map(k=>`<span class="playing-card ${k.red?'red':''}">${esc(k.rank)}<br>${esc(k.suit)}</span>`).join('')}</div>`;
+ if(t.missionId===2){
+   extra+=t.imageCard?`<div class="reference-image"><span class="emoji">${esc(t.imageCard.emoji)}</span><b>Imagen de referencia</b><div class="small" style="color:#38244b">${esc(t.imageCard.caption)}</div><div class="small" style="color:#38244b">Solo la persona que describe debe mostrar la imagen.</div></div>`:
+   `<div class="notice">${t.shared?'Organizaos entre los supervivientes para realizar esta prueba.':'Tu compañero tiene la imagen de referencia. Pídele que te la describa sin enseñártela.'}</div>`;
+ }
+ if(t.partnerEliminated)extra+=`<div class="notice">Tu pareja ha sido eliminada. Elige a otra persona que siga viva para continuar esta misión.</div>`;
+ if(t.photoProof)extra+=`<div><b class="good">Foto de prueba subida</b><img class="photo-preview" src="${t.photoProof}" alt="Foto de prueba de la misión"></div>`;
+ let actions='';
+ if(!t.completed&&!meeting){
+   if(t.partnerEliminated){
+     const opts=(t.partnerOptions||[]).map(x=>`<option value="${esc(x.id)}">${esc(x.name)}</option>`).join('');
+     actions=`<label for="partner-${t.id}">Nueva pareja</label><select id="partner-${t.id}"><option value="">Elige a un jugador vivo</option>${opts}</select><button class="blue" onclick="changePartner('${t.id}')">CAMBIAR DE PAREJA</button>`;
+   }else if(t.photoRequired||Number(t.missionId)===19){
+     actions=`<label for="photo-${t.id}">Foto como prueba</label><input class="upload-input" id="photo-${t.id}" type="file" accept="image/*" capture="environment" onchange="uploadProof('${t.id}',this.files&&this.files[0])"><button class="blue" onclick="document.getElementById('photo-${t.id}').click()">SUBIR FOTO DE PRUEBA</button>`;
+   }else{
+     actions=`<button ${t.waitingPartner?'disabled':''} class="green" onclick="completeMission('${t.id}')">${t.waitingPartner?'ESPERANDO A TU PAREJA':'MARCAR COMO REALIZADA'}</button>`;
+   }
+   if(t.type==='pair'&&!t.partnerEliminated)actions+=`<button class="alt" onclick="alertPartner('${t.id}')">AVISAR A MI COMPAÑERO</button>`;
+ }
+ const status=t.completed?'<span class="good">✓ COMPLETADA</span>':t.waitingPartner?'<span class="wait">✓ TU CONFIRMACIÓN ENVIADA · FALTA TU PAREJA</span>':'<span class="wait">PENDIENTE</span>';
+ return `<article class="mission-card ${t.completed?'done':''}"><div class="mission-top"><span class="pill ${cls}">${cls==='pair'?'POR PAREJAS':cls==='special'?'ESPECIAL':cls==='survival'?'SUPERVIVENCIA':'INDIVIDUAL'}</span><span class="pill">MISIÓN ${t.missionId}</span></div><h3>${esc(t.title)}</h3><div class="small">${status}</div><p class="mission-desc">${esc(t.description)}</p><div class="materials"><b>MATERIALES</b>${esc(t.materials)}</div>${extra}${actions}</article>`;
+}
+function rosterMarkup(players,alive){
+ if(!players.length)return '<div class="roster-empty">Ningún jugador</div>';
+ return players.map(p=>`<div class="roster-player ${alive?'':'dead'}"><div class="roster-avatar">${esc((p.name||'?').trim().charAt(0).toUpperCase())}</div><div><div class="roster-name">${esc(p.name)}</div><div class="roster-status">${alive?(p.connected?'EN PARTIDA':'DESCONECTADO'):(p.ejected?'EXPULSADO':'ELIMINADO')}</div></div>${alive?'':'<span aria-hidden="true">✖</span>'}</div>`).join('');
+}
+function renderMeeting(meeting,room,game){
+ const alive=(room.players||[]).filter(p=>p.alive),dead=(room.players||[]).filter(p=>!p.alive);
+ $('meetingInfo').textContent='Jugador encontrado: '+meeting.foundPlayerName+'. Reportado por '+meeting.reporterName+'.';
+ $('aliveCount').textContent='('+alive.length+')';$('deadCount').textContent='('+dead.length+')';
+ $('alivePlayers').innerHTML=rosterMarkup(alive,true);$('deadPlayers').innerHTML=rosterMarkup(dead,false);
+ const isDiscussion=meeting.phase!=='voting';
+ $('votingControls').classList.toggle('hidden',isDiscussion);
+ $('meetingClock').classList.toggle('voting',!isDiscussion);
+ $('meetingPhaseText').textContent=isDiscussion?'Tenéis tres minutos para debatir quién puede ser el impostor. La votación se abrirá automáticamente al terminar el tiempo.':'El debate ha terminado. ¡Es hora de votar!';
+ if(isDiscussion){
+   const seconds=Math.max(0,Math.ceil((meeting.discussionEndsAt-Date.now())/1000));
+   $('meetingClock').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');
+ }else $('meetingClock').textContent='VOTACIÓN';
+ if(!isDiscussion){
+   $('voteProgress').textContent='Votos emitidos: '+meeting.votesCast+' / '+meeting.votesNeeded;
+   optionsFor($('voteTarget'),game.voteOptions||[],'Elige a quién votar');
+   $('castVote').disabled=!game.isAlive||game.hasVoted;
+   $('votedNotice').textContent=!game.isAlive?'Estás eliminado y no puedes votar.':game.hasVoted?'Tu voto ya está registrado.':'Todos los jugadores vivos pueden votar.';
+ }
+}
+function renderGame(){
+ const s=myState,g=s.game,r=s.room;if(!g)return;
+ $('role').textContent=s.role||'—';$('role').style.color=s.role==='IMPOSTOR'?'var(--pink)':'var(--yellow)';$('mission').textContent=s.mission||'';
+ $('deadBanner').classList.toggle('hidden',g.isAlive);$('progressStats').classList.toggle('hidden',!g.isAlive);
+ $('personalProgress').textContent=g.progress+' / '+g.total;$('personalBar').style.width=(g.total?g.progress/g.total*100:0)+'%';$('teamProgress').textContent=g.teamProgress+' / '+g.teamTotal;$('teamBar').style.width=(g.teamTotal?g.teamProgress/g.teamTotal*100:0)+'%';
+ $('missionList').innerHTML=g.isAlive?(g.tasks||[]).map(t=>taskMarkup(t,r.status!=='playing')).join(''):'<div class="notice">Tus misiones quedan cerradas porque has sido eliminado.</div>';
+ $('survivalPanel').classList.toggle('hidden',!g.isAlive||!(g.survivalTasks||[]).length);
+ $('survivalList').innerHTML=g.isAlive?(g.survivalTasks||[]).map(t=>taskMarkup(t,r.status!=='playing')).join(''):'';
+ $('impostorPanel').classList.toggle('hidden',!(s.role==='IMPOSTOR'&&g.isAlive&&r.status==='playing'));
+ optionsFor($('elimTarget'),g.eliminationTargets||[],'Elige jugador');
+ $('reportPanel').classList.toggle('hidden',!g.isAlive||r.status!=='playing');$('reportCode').textContent=g.reportCode||'—';optionsFor($('foundPlayer'),g.players||[],'Selecciona al jugador encontrado');
+ $('meetingPanel').classList.toggle('hidden',r.status!=='meeting');
+ if(r.status==='meeting'&&r.meeting){renderMeeting(r.meeting,r,g);if(!meetingLoop)meetingLoop=setInterval(()=>{if(myState?.room?.status==='meeting'&&myState.room.meeting)renderMeeting(myState.room.meeting,myState.room,myState.game);else{clearInterval(meetingLoop);meetingLoop=null;}},1000);}else if(meetingLoop){clearInterval(meetingLoop);meetingLoop=null;}
+ $('meetingResult').classList.toggle('hidden',!g.meetingResult);$('meetingResult').textContent=g.meetingResult||'';
+}
+function renderTimer(end){if(!end)return;clearInterval(timerLoop);const tick=()=>{const left=Math.max(0,Math.floor((end-Date.now())/1000));$('timer').textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');};tick();timerLoop=setInterval(tick,1000);}
+function emitAck(event,payload,success){socket.emit(event,payload,res=>{if(res?.error){toast(res.error);return;}if(success)success(res||{});});}
+function createJoin(event,payload){error('');payload.missionHistory=readMissionHistory(payload.name);socket.emit(event,payload,res=>{if(res?.error){error(res.error);return;}handleState(res.state);});}
+$('create').onclick=()=>createJoin('room:create',{name:$('name').value});
+$('join').onclick=()=>createJoin('room:join',{name:$('name').value,code:$('code').value});
+$('ready').onclick=()=>emitAck('player:ready',{ready:true});$('unready').onclick=()=>emitAck('player:ready',{ready:false});
+$('copyCode').onclick=()=>{if(myState?.room?.code){navigator.clipboard?.writeText(myState.room.code).then(()=>toast('Código copiado.')).catch(()=>toast('Código de sala: '+myState.room.code));}};
+window.completeMission=id=>emitAck('game:task-complete',{taskId:id},res=>toast(res.waitingPartner?'Tu confirmación está enviada. Falta tu compañero.':res.shared?'Objetivo de supervivencia completado.':'Misión completada.'));
+window.changePartner=id=>{const select=$('partner-'+id),newPartnerId=select?.value;if(!newPartnerId)return toast('Elige a tu nueva pareja.');emitAck('game:change-partner',{taskId:id,newPartnerId},()=>toast('Nueva pareja asignada.'));};
+window.alertPartner=id=>emitAck('game:partner-alert',{taskId:id},()=>toast('Aviso enviado a tu compañero.'));
+window.uploadProof=async(id,file)=>{if(!file)return;try{const data=await compressImage(file);emitAck('game:task-proof',{taskId:id,dataUrl:data},()=>toast('Foto subida. Misión completada.'));}catch(e){toast('No se ha podido preparar la foto. Prueba con otra imagen.');}};
+async function compressImage(file){const url=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file);});const img=await new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=reject;i.src=url;});const scale=Math.min(1,1000/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);let q=.78,data=canvas.toDataURL('image/jpeg',q);while(data.length>780000&&q>.48){q-=.08;data=canvas.toDataURL('image/jpeg',q);}if(data.length>850000)throw new Error('too large');return data;}
+$('requestElimination').onclick=()=>{const targetId=$('elimTarget').value;if(!targetId)return toast('Selecciona a un jugador.');emitAck('game:elimination-request',{targetId},res=>toast(res.message||('Clave secreta: '+res.phrase)));};
+$('confirmElimination').onclick=()=>{if(!pendingEliminationId)return;$('elimModal').classList.add('hidden');emitAck('game:elimination-response',{requestId:pendingEliminationId,confirm:true},()=>toast('Has confirmado la eliminación.'));pendingEliminationId=null;};
+$('rejectElimination').onclick=()=>{if(!pendingEliminationId)return;$('elimModal').classList.add('hidden');emitAck('game:elimination-response',{requestId:pendingEliminationId,confirm:false},()=>toast('Solicitud rechazada.'));pendingEliminationId=null;};
+$('reportButton').onclick=()=>{const playerId=$('foundPlayer').value,word=$('reportWord').value;if(!playerId||!word.trim())return toast('Selecciona a quién has encontrado e introduce la palabra.');emitAck('game:report-discovery',{playerId,word},()=>toast('Hallazgo confirmado. Reunión convocada.'));};
+$('castVote').onclick=()=>{const targetId=$('voteTarget').value;if(!targetId)return toast('Elige a quién votar.');emitAck('game:vote',{targetId},()=>toast('Tu voto se ha registrado.'));};
+socket.on('player:state',handleState);
+socket.on('room:update',r=>{if(!myState)return;myState.room=r;if(myState.game){myState.game.teamProgress=r.completedTasks||0;myState.game.teamTotal=r.totalTaskAssignments||0;renderGame();}else renderRoom(r);});
+socket.on('partner:alert',d=>toast('🔔 '+d.from+' te avisa para la misión «'+d.title+'».'));
+socket.on('elimination:pending',d=>{pendingEliminationId=d.requestId;$('elimModal').classList.remove('hidden');});
+socket.on('elimination:result',d=>toast(d.message||'Actualización de la solicitud secreta.'));
+socket.on('connect_error',()=>toast('No se ha podido conectar con la partida. Actualiza la página.'));
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
+</script></body></html>
